@@ -35,6 +35,13 @@ jobs:
         env:
           EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
           EC2_HOST: ${{ secrets.EC2_HOST }}
+
+      - name: Validate SSH private key
+        run: |
+          ssh-keygen -y -f ~/.ssh/ec2_key > ~/.ssh/ec2_key.pub
+          echo "SSH private key is valid"
+
+        
         run: |
           mkdir -p ~/.ssh
           printf '%s\n' "$EC2_SSH_KEY" > ~/.ssh/ec2_key
