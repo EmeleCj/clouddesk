@@ -32,6 +32,7 @@ jobs:
         run: npm run build
 
       - name: Configure SSH
+        run:
         env:
           EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
           EC2_HOST: ${{ secrets.EC2_HOST }}
