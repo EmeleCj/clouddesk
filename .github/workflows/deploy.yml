@@ -43,7 +43,10 @@ jobs:
 
       - name: Package application
         run: |
-          tar --exclude='.git' --exclude='node_modules' -czf clouddesk.tar.gz .
+          tar --exclude='.git' \
+            --exclude='node_modules' \
+            --exclude='clouddesk.tar.gz' \
+              -czf clouddesk.tar.gz .
 
       - name: Copy application to EC2
         env:
