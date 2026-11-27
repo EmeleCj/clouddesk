@@ -1,5 +1,3 @@
-Open Jenkinsfile in VS Code and paste the following:
-
 pipeline {
     agent any
 
